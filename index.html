@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/css/materialize.min.css">
+  <!-- Custom CSS -->
+
+</head>
+<body>
+
+    <style>
+        header {
+            background: url(img/pikachu.jpg);
+            background-size: cover;
+            background-position: center;
+            min-height: auto;
+        }
+        .section {
+            padding-top: 4vw;
+            padding-bottom: 4vw;  
+        }
+        .tabs.indicator {
+            background-color: #1a237e;
+        }
+        .tabs .tab a:focus, .tabs .tab a:focus.active{
+            background: transparent;
+        }
+        @media screen and (max-width: 670px){
+            header {
+                min-height: 500px;
+            }
+        }
+    </style>
+  <!-- Navbar -->
+  <nav class="red darken-4">
+    <div class="container">
+      <a href="#" class="brand-logo">Pokémon</a>
+      <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+        <i class="material-icons">menu</i>
+    </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#search-section">Search</a></li>
+        <li><a href="#pokemon-list">Pokédex</a></li>
+        <li><a href="#" class="tooltipped btn-floating btn-small grey darken-4" data-tooltip="This is Instagram">
+            <i class="fab fa-instagram"></i>
+        </a></li>
+        <li><a href="#" class="tooltipped btn-floating btn-small grey darken-4" data-tooltip="This is Facebook">
+            <i class="fab fa-facebook"></i>
+        </a></li>
+        <li><a href="#" class="tooltipped btn-floating btn-small grey darken-4" data-tooltip="This is Twitter">
+            <i class="fab fa-twitter"></i>
+        </a></li>
+        </ul>
+
+        <ul class="sidenav grey lighten-2" id="mobile-menu">
+            <li><a href="#search-section">Search</a></li>
+            <li><a href="#pokemon-list">Pokédex</a></li>
+        </ul>
+    </div>
+  </nav>
+  <header>
+   
+  <!-- Search Section -->
+  <div id="search-section" class="container section">
+    <h4>Search Pokémon</h4>
+    <div class="input-field">
+      <input id="pokemon-search" type="text" placeholder="Enter Pokémon name">
+      <button class="btn red darken-4" onclick="searchPokemon()">Search</button>
+    </div>
+    <div id="search-result" class="card-panel red lighten-5 hide">
+      <h5>Pokémon Found</h5>
+      <p id="pokemon-info"></p>
+    </div>
+  </div>
+
+  <!-- photo / grid -->
+  <section class="container section scrollspy" id="photos">
+    <div class="row">
+        <div class="col s12 l4">
+            <img src="img/pikachu01.jpg" alt="" class="responsive-img materialboxed">
+        </div>
+        <div class="col s12 l6 offset-l1">
+            <h2 class="red-text text-darken-2">Pikachu</h2>
+            <p>Pikachu is a small, yellow, mouse-like Pokémon that has become one of the most iconic characters in the Pokémon franchise. Its body is round and petite, with brown stripes across its back, and its large, expressive black eyes and cheerful smile give it an endearing look. Pikachu’s cheeks are bright red, a feature that stores electricity, and its long, pointed ears have black tips. Its tail is shaped like a lightning bolt, further emphasizing its electric powers.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 l4 push-l7 offset-l1">
+            <img src="img/pikachu02.jpg" alt="" class="responsive-img materialboxed">
+        </div>
+        <div class="col s12 l6 pull-l4 right-align">
+            <h2 class="red-text text-darken-2">Pokemon</h2>
+            <p>Pikachu is known for its playful, loyal nature, often seen as the companion of Ash Ketchum in the Pokémon anime series. It stands about 1'4" (40 cm) tall and can generate and release electricity through its moves like Thunderbolt, which has become a signature ability of the character. Pikachu’s combination of cuteness and electric powers has made it a beloved and enduring symbol of the Pokémon franchise.</p>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Pokémon List -->
+<div id="pokemon-list" class="container section">
+    <h4>Pokédex</h4>
+    <div class="row" id="pokemon-cards">
+      <!-- Pokémon Cards will be inserted here by JavaScript -->
+    </div>
+  </div>
+
+
+<!-- contact form -->
+<section class="container section scrollspy" id="contact">
+<div class="row">
+    <div class="col s12 l5">
+        <h2 class="indigi-text text-darken-4">Get in Touch</h2>
+        <p>To contact Hannali G. Ledesma, a senior high student from ABM 11-B, you can reach her through her school email, where she regularly responds to academic inquiries. Hannali is dedicated to her studies and is always open to helping others with coursework or school projects. </p>
+        <p>She values clear and respectful communication, ensuring that any questions or concerns are addressed promptly. Hannali is also available on messaging platforms for more personal conversations, offering a friendly and supportive approach to connecting with peers. </p>
+        <p>Feel free to reach out if you need assistance, and Hannali will be happy to respond in a timely manner.</p>
+    </div>
+    <div class="col s12 l5 offset-l2">
+        <div class="input-field">
+            <i class="material-icons prefix">email</i>
+            <input type="email" id="email">
+            <label for="email">Your Email</label>
+        </div>
+        <div class="input-field">
+            <i class="material-icons prefix">message</i>
+            <textarea name="textarea" id="message" class="materialize-textarea"></textarea>
+            <label for="message">Your Message</label>
+        </div>
+        <div class="input-field">
+            <i class="material-icons prefix">date_range</i>
+            <input type="text" id="date" class="datepicker">
+            <label for="date">Choose a date you need me for...</label>
+        </div>
+        <div class="input-field">
+            <p>Services required...</p>
+            <p>
+                <label>
+                    <input type="checkbox">
+                    <span>Photography</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox">
+                    <span>Editing</span>
+                </label>
+            </p>
+        </div>
+        <div class="input-field center">
+            <button class="btn">Submit</button>
+        </div>
+    </div>
+</div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="page-footer red darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 l6">
+                <h5>About Me</h5>
+                <p>Hannali G. Ledesma</p>
+                <p>From Accountancy, Business, and Management 11-B</p>
+            </div>
+            <div class="col s12 l4 offset-l2">
+                <h5>Connect</h5>
+                <ul>
+                    <li><a href="#" class="grey-text lighten 3"></a>Facebook</li>
+                    <li><a href="#" class="grey-text lighten 3"></a>Twitter</li>
+                    <li><a href="#" class="grey-text lighten 3"></a>Linked In</li>
+                    <li><a href="#" class="grey-text lighten 3"></a>Instagram</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+        <div class="container center-align">&copy; 2024 Photo Ninjas</div>
+    </div>
+</footer>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+  <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.materialboxed').materialbox();
+        $('.parallax').parallax();
+        $('.tabs').tabs();
+        $('.datepicker').datepicker ({
+            disableWeekends: true
+        });
+        $('.tooltipped').tooltip();
+        $('.scrollspy').scrollSpy();        
+    });
+    </script>
+</body>
+</html>
